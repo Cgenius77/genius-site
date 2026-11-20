@@ -33,5 +33,5 @@ export function Footer() {
     <div><h2>Navigation</h2>{navLinks.map(([label, target]) => <a key={target} href={href(target)}>{label}</a>)}</div>
     <div><h2>Nos services</h2>{categories.map(category => <a key={category.id} href={href('services')}>{category.short}</a>)}<a href={href('formations')}>Formations</a></div>
     <div><h2>WhatsApp</h2>{phones.map(([number, label]) => <a key={number} href={whatsapp(undefined, number)}>{label}</a>)}<div className="socials">{socialLinks.map(({label, href: link, icon: Icon}) => link ? <a className="icon-button" key={label} href={link} aria-label={label}><Icon size={18} /></a> : <span className="icon-button" key={label} title={`${label} — lien à venir`}><Icon size={18} aria-hidden="true" /><span className="sr-only">{label} — lien à venir</span></span>)}</div></div>
-  </div><div className="footer-band bg-brand-band"><div className="shell">© 2026 Genius Agency <span>Basée en Haïti</span></div></div></footer>
+  </div><div className="footer-band bg-brand-band"><div className="shell">© 2026 Genius Agency</div></div></footer>
 }
