@@ -5,7 +5,7 @@ import { ArrowUp } from 'lucide-react'
 import '@fontsource-variable/montserrat'
 import '@fontsource-variable/nunito-sans'
 import './styles.css'
-import { Footer, Navbar } from './components/layout'
+import { BottomNav, Footer, Navbar } from './components/layout'
 import { Contact, FAQ } from './components/content'
 import { WhatsAppButton } from './components/ui'
 import { FontPicker } from './components/font-picker'
@@ -29,7 +29,7 @@ function App() {
       {route === 'affiliation' && <Affiliation />}
       {route === 'contact' && <><Contact /><FAQ /></>}
     </main>
-    <Footer /><div className="floating-actions"><FontPicker /><button type="button" className="glass icon-button" aria-label="Retour en haut" onClick={() => window.scrollTo({ top: 0 })}><ArrowUp size={19} aria-hidden="true" /></button><WhatsAppButton floating /></div>
+    <Footer /><BottomNav route={route} /><div className="floating-actions"><FontPicker /><button type="button" className="glass icon-button to-top" aria-label="Retour en haut" onClick={() => window.scrollTo({ top: 0 })}><ArrowUp size={19} aria-hidden="true" /></button><WhatsAppButton floating /></div>
   </MotionConfig>
 }
 

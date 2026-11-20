@@ -28,7 +28,7 @@ export function Section({ id, label, title, description, children, heading = 'h2
   const reduced = useReducedMotion()
   const Heading = heading
   return <section id={id} className={`shell section ${heading === 'h1' ? 'page-head' : ''}`} aria-labelledby={`${id}-titre`}>
-    <motion.header className="section-head" initial={reduced ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: reduced ? 0 : .45 }}>
+    <motion.header className="section-head" initial={reduced || heading === 'h1' ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: reduced ? 0 : .45 }}>
       <span className="eyebrow">{label}</span><Heading id={`${id}-titre`}>{title}</Heading>{description && <p>{description}</p>}
     </motion.header>
     {children}
